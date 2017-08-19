@@ -1,6 +1,6 @@
 var express = require('express');
 
-app.get('/webhook', function(req, res) {
+app.get('/facebook', function(req, res) {
   if (req.query['hub.mode'] === 'subscribe' &&
       req.query['hub.verify_token'] === 'verify_token') {
     console.log("Validating webhook");
@@ -11,7 +11,7 @@ app.get('/webhook', function(req, res) {
   }  
 });
 
-app.post('/webhook', function (req, res) {
+app.post('/facebook', function (req, res) {
   var data = req.body;
 
   // Make sure this is a page subscription
