@@ -2,7 +2,7 @@ var express = require('express');
 
 app.get('/webhook', function(req, res) {
   if (req.query['hub.mode'] === 'subscribe' &&
-      req.query['hub.verify_token'] === 'EAAa4E7M65kABAJHmof0uTLh0GvcbFZBIdOH0Czs2JXJJS2JU3u1dIJ84AZAZCSQZBB8pMEzUZAZALLgpNHLL1aX8s8fZATg1nUpEWw2zvASmvfQjOKELArZBJQKcQ91KTZCPwH8gBWG6ZCpCqhVM8MfmvkK2wmFmKW7CJnMCbz3YZBdVCnVYqucMvcU') {
+      req.query['hub.verify_token'] === 'verify_token') {
     console.log("Validating webhook");
     res.status(200).send(req.query['hub.challenge']);
   } else {
